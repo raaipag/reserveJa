@@ -1,0 +1,29 @@
+if(req.body.nome != "" && req.body.cpf != "" && req.body.telefone != ""){
+        connection.query('UPDATE clientes SET nome = \'' + req.body.nome + '\', cpf = \'' + req.body.cpf + '\', telefone = \'' + req.body.telefone + '\' WHERE id=' + req.body.id, (err, results) =>{
+            res.json("---Cliente atualizado com sucesso!---")
+        })
+    }else if(req.body.nome == "" && req.body.cpf == ""){
+        connection.query('UPDATE clientes SET telefone = \'' + req.body.telefone + '\' WHERE id=' + req.body.id, (err, results) =>{
+            res.json("---Cliente atualizado com sucesso!---")
+        })
+    }else if(req.body.nome == "" && req.body.telefone == ""){
+        connection.query('UPDATE clientes SET cpf = \'' + req.body.cpf + '\' WHERE id=' + req.body.id, (err, results) =>{
+            res.json("---Cliente atualizado com sucesso!---")
+        })
+    }else if(req.body.cpf == "" && req.body.telefone == ""){
+        connection.query('UPDATE clientes SET nome = \'' + req.body.nome +'\' WHERE id=' + req.body.id, (err, results) =>{
+            res.json("---Cliente atualizado com sucesso!---")
+        })
+    }else if(req.body.nome == ""){
+        connection.query('UPDATE clientes SET cpf = \'' + req.body.cpf + '\', telefone = \'' + req.body.telefone + '\' WHERE id=' + req.body.id, (err, results) =>{
+            res.json("---Cliente atualizado com sucesso!---")
+        })
+    }else if(req.body.cpf == ""){
+        connection.query('UPDATE clientes SET nome = \'' + req.body.nome + '\', telefone = \'' + req.body.telefone + '\' WHERE id=' + req.body.id, (err, results) =>{
+            res.json("---Cliente atualizado com sucesso!---")
+        })
+    }else if(req.body.telefone ==""){
+        connection.query('UPDATE clientes SET nome = \'' + req.body.nome + '\', cpf = \'' + req.body.cpf + '\ WHERE id=' + req.body.id, (err, results) =>{
+            res.json("---Cliente atualizado com sucesso!---")
+        })
+    }
